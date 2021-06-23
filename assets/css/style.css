@@ -1,0 +1,2061 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #313c4e;
+}
+
+a {
+  color: #313c4e;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #313c4e;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Nunito", sans-serif;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  color: #39304e;
+}
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+/*--------------------------------------------------------------
+#       Secciones h1
+--------------------------------------------------------------*/
+
+.section-header {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+/*--------------------------------------------------------------
+#       Secciones h2
+--------------------------------------------------------------*/
+
+
+.section-header h2 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 0;
+  color: #39304e;
+  text-transform: initial;
+}
+
+/*--------------------------------------------------------------
+#       Secciones parrafo
+--------------------------------------------------------------*/
+
+.section-header p {
+  font-family: "Lato", sans-serif;
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 38px;
+  line-height: 42px;
+  font-weight: 700;
+  color: #313c4e;
+}
+
+@media (max-width: 768px) {
+  .section-header p {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: #ff4297;
+  min-height: 40px;
+  margin-top: 82px;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 57px;
+  }
+}
+
+.breadcrumbs h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol a {
+  color: #ff4297;
+  transition: 0.3s;
+}
+
+.breadcrumbs ol a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #313c4e;
+  content: "/";
+}
+
+/*--------------------------------------------------------------
+# Botón de volver para arriba
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background: #ff4297; 
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 24px;
+  color: #ffffff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #b2095e;
+  color: #ffffff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# Header general
+-----------------------------------------------------------------------------------------------------------*/
+.header {
+  background: #fff;
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
+}
+
+.header.header-scrolled {
+  background: #fff;
+  padding: 15px 0;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+}
+
+.header .logo {
+  line-height: 0;
+
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------
+# Menu de navegación
+--------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #39304e;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i, .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #6cc4e6;
+
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 15px;
+  text-transform: none;
+  font-weight: 600;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+  color: #6cc4e6;
+}
+
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+}
+
+/**
+* Header - Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #39304e;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(1, 22, 61, 0);
+  transition: 0.3s;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #012970;
+}
+
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+  color: #6cc4e6;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
+  color: #6cc4e6;
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------
+# Index Page - PAGINA HOME
+--------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------------------
+# Hero 
+-----------------------------------------------------------------------------------------------------------
+
+/*
+# Hero - fondo celeste
+-*/
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/hero-bg.png) bottom center no-repeat;
+  background-size: cover;
+  background-attachment: unset !important;
+}
+
+.hero-mobile {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/hero-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+
+/*
+# Hero - titulo h1 - Todo lo que tu príncipe merece
+-*/
+
+.hero h1 {
+  margin: 0;
+  font-size: 54px !important;
+  font-weight: 900 !important;
+  color: #39304e;
+}
+
+/*
+# Hero - titulo h2 - Juguetes y golosinas exclusivas para tu perro entregadas mes a mes en la puerta de tu casa.
+-*/
+
+.hero h2 {
+  color: #39304e !important;
+  margin: 15px 0 0 0;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+/*
+# Hero - boton - quiero suscribirme - botón/forma
+-*/
+
+.hero .btn-get-started {
+  margin-top: 30px;
+  line-height: 0;
+  height: 46px;
+  padding: 15px 40px;
+  border-radius: 100px;
+  transition: 0.5s;
+  color: #fff;
+  background: #ff4297;
+  box-shadow: 0px 5px 30px rgba(57, 47, 78, 0.2);
+}
+
+/*
+# Hero - boton - quiero suscribirme - texto del boton
+-*/
+
+.hero .btn-get-started span {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.hero .btn-get-started i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/*
+# Hero - boton - quiero suscribirme - lo que sucede al pasar sobre el botón
+-*/
+
+.hero .btn-get-started i {
+  line-height: 0;
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.hero .btn-get-started:hover i {
+  transform: translateX(5px);
+}
+
+.hero .btn-get-started:hover {
+  transform: scale(105%);
+}
+
+.hero .hero-img {
+  text-align: right;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    height: auto;
+    padding: 120px 0 60px 0;
+  }
+  .hero .hero-img {
+    text-align: bottom;
+    margin-top: 80px;
+  }
+  .hero .hero-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero h2 {
+    font-size: 24px;
+  }
+  .hero .hero-img img {
+    width: 100%;
+  }
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# Values - en tres simples pasos
+-----------------------------------------------------------------------------------------------------------*/
+/*
+# Values - volanta h2 - ¿Cómo funciona?
+-*/
+
+.values h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6cc4e6;
+}
+
+/*
+# Values - titulo h1 - En tres simples pasos
+-*/
+
+.values h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #39304e;
+}
+
+/*
+# Values - 3 columnas/boxes
+-*/
+
+.values .box {
+  padding: 10px;
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.values .box img {
+  padding: 20px 50px;
+  transition: 0.5s;
+  transform: scale(0.9);
+}
+
+.values .box h3 {
+  font-size: 24px;
+  color: #313c4e;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.values .box:hover img {
+  transform: scale(1);
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# About - nosotras
+-----------------------------------------------------------------------------------------------------------*/
+
+/*
+# About - volanta h2 - Nosotras
+-*/
+
+.about h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6cc4e6;
+}
+
+/*
+# About - titulo h1 - ¿Quiénes somos?
+-*/
+
+.about h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #39304e;
+}
+
+/*
+# About - subtitulo h3 - SOMOS ROMINA Y ANDREA,LAS AMANTES Nº1 DE LOS PERROS.
+-*/
+
+.about h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #39304e;
+  text-transform: uppercase;
+}
+
+/*
+# About - párrafo p
+-*/
+
+.about p {
+  margin: 15px 0 30px 0;
+  line-height: 24px;
+}
+
+/*
+# About - boton conce mas sobre nuestra trayectoria
+-*/
+
+.about .conocenos {
+  color: #6cc4e6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.about .conocenos i {
+  line-height: 0;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.about .conocenos i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.about .conocenos:hover i {
+  transform: translateX(5px);
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# Features - porqué elegirnos
+-----------------------------------------------------------------------------------------------------------*/
+
+/*
+# Features - titulo h1 - ¿Por qué elegirnos?
+-*/
+
+.features h1 {
+  font-family: Nunito;
+  font-size: 40px;
+  font-weight: 900;
+  color: #39304e;
+}
+
+/*
+# Features - listado 6 items - estructura
+-*/
+
+.features .feature-box {
+  padding: 10px 20px;
+  transition: 0.3s;
+  height: 100%;
+}
+
+/*
+# Features - listado 6 items - textos h3
+-*/
+
+.features .feature-box h3 {
+  font-family: Lato;
+  font-size: 18px;
+  color: #39304e;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+/*
+# Features - listado 6 items - qué sucede al pasar por encima
+-*/
+
+.features .feture-tabs {
+  margin-top: 120px;
+}
+
+.features .feture-tabs h3 {
+  color: #012970;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# Pricing - suscripciones
+-----------------------------------------------------------------------------------------------------------*/
+
+/*
+# Pricing - fondo
+-*/
+
+.pricing {
+  background: url(../img/suscripciones-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+
+.pricing-mobile {
+  background: url(../img/suscripciones-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+
+
+/*
+# Pricing - cajas contenedoras
+-*/
+.pricing .box {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 0 30px rgba(57, 47, 78, 0.2);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+/*
+# Pricing - cajas contenedoras - qué sucede al pasar por encima
+-*/
+
+.pricing .box:hover {
+  transform: scale(1.025);
+  box-shadow: 0px 0 30px rgba(57, 47, 78, 0.2)
+  }
+
+/*
+# Pricing - volanta h2 - Suscripciones
+-*/
+
+.pricing .section-header h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #c4e7f5;
+}
+
+/*
+# Pricing - titulo h1 - hace que tu amigo lance un guau de felicidad
+-*/
+
+.pricing .section-header h1 {
+  font-family: Nunito;
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+}
+
+/**
+* Pricing - imagenes de la box
+*/
+
+.pricing img {
+  padding: 30px 40px;
+}
+
+/*
+# Pricing - titulo h3 - x 1/6/12 meses
+-*/
+
+.pricing h3 {
+  font-weight: 900;
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+/*
+# Pricing - titulo h4 - bajada
+-*/
+
+.pricing h4 {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+
+/**
+* Pricing - textos listado
+*/
+
+.pricing ul {
+  font-family: Lato;
+  padding: 0;
+  list-style: none;
+  color: #39304e;
+  text-align: center;
+  line-height: 26px;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.pricing ul li {
+  padding-bottom: 10px;
+}
+
+.pricing ul .na {
+  color: #39304e;
+  text-decoration: line-through;
+}
+
+/**
+* Pricing - precios en $
+*/
+
+.pricing .price {
+  font-size: 36px;
+  color: #313c4e;
+  font-weight: 900;
+  font-family: "Nunito", sans-serif;
+}
+
+.pricing .price sup {
+  font-size: 20px;
+  top: -15px;
+  left: -3px;
+}
+
+/**
+* Pricing - Por mes
+*/
+
+.pricing .price span {
+  color: #39304e;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/**
+* botón ¡la quiero!
+*/
+
+.pricing .btn-buy {
+  background: #ff4297;
+  color: #fff;
+  padding: 8px 40px 10px 40px;
+  border-radius: 100px;
+  transition: none;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+  border: 1px solid #ff4297;
+}
+
+.pricing .btn-buy:hover {
+  display: inline-block;
+  padding: 8px 40px 10px 40px;
+  border-radius: 50px;
+  background: #fff;
+  color: #ff4297; 
+}
+
+.pricing .featured {
+  width: 200px;
+  position: absolute;
+  top: 18px;
+  right: -68px;
+  transform: rotate(45deg);
+  z-index: 1;
+  font-size: 14px;
+  padding: 1px 0 3px 0;
+  background: #4154f1;
+  color: #fff;
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# Veterniario - veterinario
+-----------------------------------------------------------------------------------------------------------*/
+
+/*
+# Veterinario - cita
+-*/
+
+.veterinario h5 {
+  margin: 15px 0 30px 0;
+  line-height: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/*
+# veterianrio - dr romero
+-*/
+
+.veterinario .doctor {
+  color: #6cc4e6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.veterinario .doctor i {
+  line-height: 0;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+/*
+# veterianrio - conoce mas
+-*/
+
+.veterinario .conocenos {
+  color: #6cc4e6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.veterinario .conocenos i {
+  line-height: 0;
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.veterinario .conocenos:hover i {
+  transform: translateX(5px);
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------
+# Testimonals - testimoniales
+-----------------------------------------------------------------------------------------------------------*/
+/*
+# testi - fondo
+-*/
+
+.testimonials {
+  height: 800px;
+  background: url(../img/testi-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+
+.testimonials-mobile {
+  background: url(../img/testi-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+
+/*
+# testimonials - volanta h2 - testimoniales
+-*/
+
+.testimonials h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6cc4e6;
+}
+
+/*
+# testimonials - titulo h1 - opiniones de quienes ya nos conocen
+-*/
+
+.testimonials h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #39304e;
+}
+
+/*
+# testimonials - caja contenedora
+-*/
+
+.testimonials .testimonial-item {
+  box-sizing: content-box;
+  border-radius: 3%;
+  padding: 30px;
+  margin: 40px 30px;
+  box-shadow: 0px 0 20px #f2f2f2;
+  background: #fff;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/*
+# testimonials - caja contenedora
+-*/
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin: 0 auto;
+}
+
+/*
+# testimonials - nombre
+-*/
+
+.testimonials .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  color: #313c4e;
+}
+
+/*
+# testimonials - provincia
+-*/
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  color: #39304e;
+  margin: 0;
+}
+
+/*
+# testimonials - cita
+-*/
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  margin: 0 auto 15px auto;
+}
+
+/*
+# testimonials - swipe
+-*/
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fbebf1;
+  opacity: 1;
+  border: 1px solid #ff4297;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #ff4297;
+}
+
+.testimonials .swiper-slide {
+  opacity: .3;
+}
+
+@media (max-width: 1199px) {
+  .testimonials .swiper-slide-active {
+    opacity: 1;
+  }
+  .testimonials .swiper-pagination {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .testimonials .swiper-slide-next {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# Portfolio
+-----------------------------------------------------------------------------------------------------------*/
+/*
+# testi - fondo
+-*/
+
+.portfolio {
+  background: url(../img/final-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+
+.portfolio-mobile {
+  background: url(../img/final-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+
+/*
+# portfolio - volanta h2 - redes
+-*/
+
+.portfolio h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6cc4e6;
+}
+
+/*
+# portfolio - titulo h1 - sumate a la familia guauclub
+-*/
+
+.portfolio h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #39304e;
+}
+
+/*
+# portfolio - galeria
+-*/
+
+.portfolio .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.portfolio .portfolio-wrap::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.portfolio .portfolio-wrap img {
+  transition: 1s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio .portfolio-wrap .portfolio-info::before {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.portfolio .portfolio-wrap .portfolio-info::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+/*
+# redes - botones de link
+-*/
+
+.portfolio .portfolio-wrap .portfolio-links {
+  text-align: center;
+  z-index: 4;
+}
+
+/*
+# redes - botones de link - boton
+-*/
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: #fff;
+  background: #ff4297;
+  margin: 10px 2px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a i {
+  font-size: 24px;
+  line-height: 0;
+}
+
+/*
+# redes - que sucede al pasar x encima
+-*/
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  background: #ff7bb6;
+}
+
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio .portfolio-wrap:hover::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info::before {
+  top: 15px;
+  left: 15px;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info::after {
+  bottom: 15px;
+  right: 15px;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------------------
+# Contact
+-----------------------------------------------------------------------------------------------------------*/
+/*
+# testi - fondo
+-*/
+
+.contact {
+  background: url(../img/final-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+
+.contact-mobile {
+  background: url(../img/final-bg.png) bottom center no-repeat;
+  background-size: cover;
+}.
+
+/*
+# contacto - volanta h2 - contacto
+-*/
+
+.contact h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6cc4e6;
+}
+
+/*
+# contacto - titulo h1 - te quedo alguna duda? hablemos
+-*/
+
+.contact h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #39304e;
+}
+
+/*
+# contacto - caja contenedora gral
+-*/ 
+
+.contact .php-email-form {
+  background: #fdecf2;
+  padding: 30px;
+  height: 100%;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ff4297;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #ff4297;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #ff4297;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input, .contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 0;
+}
+
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+  border-color: #ff4297;
+}
+
+.contact .php-email-form input {
+  padding: 10px 15px;
+}
+
+.contact .php-email-form textarea {
+  padding: 12px 15px;
+}
+
+.contact .php-email-form button[type="submit"] {
+  background: #ff4297;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 100px;
+}
+
+/*
+# contacto - boton - pasando sobre
+-*/ 
+
+.contact .php-email-form button[type="submit"]:hover {
+  background: #ff7bb6;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# Footer
+-----------------------------------------------------------------------------------------------------------*/
+.footer {
+  background: #313c4e;
+  padding: 0 0 30px 0;
+  font-size: 14px;
+}
+
+.footer .footer-top {
+  background: #313c4e
+  background-size: contain;
+  padding: 60px 0 30px 0;
+}
+
+@media (max-width: 992px) {
+  .footer .footer-top {
+    background-position: center bottom;
+  }
+}
+
+.footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+.footer .footer-top .footer-info .logo {
+  line-height: 0;
+  margin-bottom: 15px;
+}
+
+.footer .footer-top .footer-info .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Nunito", sans-serif;
+  color: #fff;
+}
+
+/*
+# footer - iconos rrss
+-*/ 
+
+.footer .footer-top .social-links a {
+  font-size: 20px;
+  display: inline-block;
+  color: #fdecf2;
+  line-height: 0;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .footer-top .social-links a:hover {
+  color: #6cc4e6;
+}
+
+/*
+# footer - titulo guauclub + contactanos
+-*/
+
+.footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-top p {
+  font-size: 16px;
+  font-weight: lighter;
+  color: #fff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+
+.footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-top .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-top .footer-links ul a:hover {
+  color: #6cc4e6;
+}
+
+.footer .footer-top .footer-contact p {
+  line-height: 26px;
+}
+
+.footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+  color: #fff;
+}
+
+.footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------------------------------------------
+# PAGINA DE DETALLE
+--------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------------------
+# Hero detalle
+-----------------------------------------------------------------------------------------------------------
+
+/*
+# Hero - fondo celeste
+-*/
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/hero-bg.png) bottom center no-repeat;
+  background-size: cover;
+  background-attachment: unset !important;
+}
+
+.hero-mobile {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/hero-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+
+/*
+# Hero - titulo h1 
+-*/
+
+.hero .detalle h1 {
+  margin: 0;
+  font-size: 54px !important;
+  font-weight: 900 !important;
+  color: #ff4297 !important;
+}
+
+/*
+# Hero - titulo h2
+-*/
+
+.hero .detalle h2 {
+  color: #ff4297 !important;
+  margin: 15px 0 0 0;
+  font-size: 21px;
+  font-weight: 900;
+}
+
+/*
+# Hero - titulo h3 - ¡DIVERSIÓN TOTAL TODO EL AÑO!
+-*/
+
+.hero .detalle h3 {
+  color: #39304e !important;
+  margin: 15px 0 0 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+/*
+# Hero - titulo h4 - TEXT
+-*/
+
+.hero .detalle h4 {
+  color: #39304e !important;
+  margin: 20px 0 0 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/*
+# Hero - titulo h1 
+-*/
+
+.hero .detalle h5 {
+  margin: 0;
+  font-size: 44px !important;
+  font-weight: 900 !important;
+  color: #39304e !important;
+}
+
+/*
+# Hero - titulo h2
+-*/
+
+.hero .detalle h6 {
+  color: #39304e !important;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+
+/*
+# Hero - boton - quiero suscribirme - botón/forma
+-*/
+
+.hero .btn-get-started {
+  margin-top: 10px;
+  line-height: 0;
+  height: 46px;
+  padding: 15px 40px;
+  border-radius: 100px;
+  transition: 0.5s;
+  color: #fff;
+  background: #ff4297;
+  box-shadow: 0px 5px 30px rgba(57, 47, 78, 0.2);
+}
+
+/*
+# Hero - boton - quiero suscribirme - texto del boton
+-*/
+
+.hero .btn-get-started span {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.hero .btn-get-started i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/*
+# Hero - boton - quiero suscribirme - lo que sucede al pasar sobre el botón
+-*/
+
+.hero .btn-get-started i {
+  line-height: 0;
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.hero .btn-get-started:hover i {
+  transform: translateX(5px);
+}
+
+.hero .btn-get-started:hover {
+  transform: scale(105%);
+}
+
+.hero .hero-img {
+  text-align: right;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    height: auto;
+    padding: 120px 0 60px 0;
+  }
+  .hero .hero-img {
+    text-align: bottom;
+    margin-top: 80px;
+  }
+  .hero .hero-img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero h2 {
+    font-size: 24px;
+  }
+  .hero .hero-img img {
+    width: 100%;
+  }
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# Recent Blog Posts - JUGUETES - COMIDA - ACCESORIOS
+-----------------------------------------------------------------------------------------------------------*/
+.recent-blog-posts .post-box {
+  box-shadow: 0px 0 30px #f2f2f2;
+  transition: 0.3s;
+  height: 100%;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-blog-posts .post-box .post-img {
+  overflow: hidden;
+  margin: -30px -30px 15px -30px;
+  position: relative;
+}
+
+.recent-blog-posts .post-box .post-img img {
+  transition: 0.5s;
+}
+
+.recent-blog-posts .post-box .post-date {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(1, 41, 112, 0.6);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.recent-blog-posts .post-box .post-title {
+  font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+  margin-bottom: 18px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.recent-blog-posts .post-box .readmore {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  line-height: 1;
+  transition: 0.3s;
+}
+
+.recent-blog-posts .post-box .readmore i {
+  line-height: 0;
+  margin-left: 4px;
+  font-size: 18px;
+}
+
+.recent-blog-posts .post-box:hover .post-img img {
+  transform: rotate(2deg) scale(1.1);
+}
+
+/*
+# container - boton - quiero suscribirme - botón/forma
+-*/
+
+
+.container .btn-get-started {
+  margin-top: 50px !important;
+  background: #ff4297;
+  color: #fff;
+  padding: 8px 40px 10px 40px;
+  border-radius: 100px;
+  transition: none;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  transition: 0.3s;
+  border: 1px solid #ff4297;
+  max-width: 250px;
+  margin: auto;
+  box-shadow: 0px 5px 30px rgba(57, 47, 78, 0.2);
+}
+
+.container .btn-get-started i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+
+/*
+# container - boton - quiero suscribirme - texto del boton
+-*/
+
+.container .btn-get-started span {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.container .btn-get-started i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/*
+# container - boton - quiero suscribirme - lo que sucede al pasar sobre el botón
+-*/
+
+.container .btn-get-started i {
+  line-height: 0;
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.container .btn-get-started:hover i {
+  transform: translateX(5px);
+}
+
+.container .btn-get-started:hover {
+  transform: scale(105%);
+}
+
+
+
+/*
+# blog - volanta h2 
+-*/
+
+.container h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6cc4e6;
+}
+
+/*
+# blog - titulo h1 
+-*/
+
+.container h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #39304e;
+}
+
+/*
+# blog - subtitulo h3
+-*/
+
+.container h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #313c4e;
+}
+
+/*
+# blog - párrafo p
+-*/
+
+.container p {
+  margin: 15px 0 30px 0;
+  line-height: 24px;
+  color: #313c4e;
+}
+
+.container {
+  padding: 40px 0 20px 0;
+}
+
+/*
+# About - boton conce mas
+-*/
+
+.container .conoce {
+  color: #6cc4e6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.container .conoce i {
+  line-height: 0;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.container .conoce i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.container .conoce:hover i {
+  transform: translateX(8px);
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+# beneficios - 20 5 2
+-----------------------------------------------------------------------------------------------------------*/
+.beneficios {
+  background: url(../img/beneficio-bg.png) bottom center no-repeat;
+  background-size: cover;
+}
+/*
+# beneficios - volanta h2 - beneficios
+-*/
+
+.beneficios h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ff4297;
+}
+
+/*
+# beneficios - titulo h1 - guau beneficios
+-*/
+
+.beneficios h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #39304e;
+}
+
+/*
+# beneficios - 3 
+-*/
+
+.beneficios .box {
+  padding: 10px;
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.beneficios .box img {
+  padding: 20px 50px;
+  transition: 0.5s;
+  transform: scale(0.9);
+}
+
+.beneficios .box h3 {
+  font-size: 24px;
+  color: #313c4e;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.beneficios .box:hover img {
+  transform: scale(1);
+}
+
+/*--------------------------------------------------------------
+# Counts - metodos de pago
+--------------------------------------------------------------*/
+
+
+.counts {
+  padding: 70px 0 60px;
+}
+
+.counts .count-box {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 0 30px #f2f2f2;
+}
+
+.counts .count-box i {
+  font-size: 42px;
+  line-height: 0;
+  margin-right: 20px;
+  color: #4154f1;
+}
+
+.counts .count-box span {
+  font-size: 36px;
+  display: block;
+  font-weight: 600;
+  color: #0b198f;
+}
+
+.counts .count-box p {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------
+# Pricing - suscripciones
+-----------------------------------------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------------------------------------------
+# F.A.Q
+-----------------------------------------------------------------------------------------------------------*/
+.faq .accordion-collapse {
+  border: 0;
+}
+
+.faq .accordion-button {
+  padding: 15px 15px 20px 0;
+  font-weight: 600;
+  border: 0;
+  font-size: 18px;
+  color: #444444;
+  text-align: left;
+}
+
+.faq .accordion-button:focus {
+  box-shadow: none;
+}
+
+.faq .accordion-button:not(.collapsed) {
+  background: none;
+  color: #4154f1;
+  border-bottom: 0;
+}
+
+.faq .accordion-body {
+  padding: 0 0 25px 0;
+  border: 0;
+}
